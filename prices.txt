@@ -1,0 +1,164 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="pt-BR"> 
+
+    <head>
+
+        <html lang="pt-br"> 
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+            <style media="screen">body{background-color:#fff;margin-left:2px;margin-top:5px}.tabela{background-color:#fff}#indice{text-align:left;vertical-align:middle;margin-left:5px;float:left}.ultimas-noticias{font-size:17px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;color:#3b3b3b}.rotulocotacao{text-decoration:none;font-size:14px;cursor:pointer;color:#06c}#atualizacao{text-align:center;font-family:Verdana,Geneva,sans-serif;background-image:url(/widget/img/topo.png);color:#fff;font-size:09px;font-weight:bold;width:196px;height:20px}.descricao{color:#060;font-family:Verdana,Geneva,sans-serif;font-size:12px;font-weight:600}.descricao a{text-decoration:none;color:#060}.descricao a:hover{text-decoration:underline;color:#060}.fonte{font-family:Verdana,Geneva,sans-serif;font-size:9px;text-align:center;margin-bottom:10px;margin-top:5px}#incorporar a{font-family:Verdana,Geneva,sans-serif;font-size:9px;color:#002800}#incorporar{text-align:center;padding-top:5px;padding-bottom:5px}#cotacao{font-family:Verdana,Geneva,sans-serif;text-align:left;margin-left:15px}#cotacao .moeda{font-size:9px;text-align:left}#cotacao .valor{font-size:12px;margin-left:2px}#cotacao .valorhorizontal{font-size:11px;margin-left:1px}#cotacao .unidade{font-size:9px;color:#999;text-align:center}#cotacao a{border:none;color:#333;text-decoration:none}.linka{font-size:12px;font-family:RobotoBlack,RobotoCondensed,Arial,Helvetica,sans-serif;text-decoration:none;cursor:pointer;color:#06c}#cotacao a:hover{text-decoration:underline}#titulos{color:#006;font-family:Verdana,Geneva,sans-serif;font-size:10px;font-weight:bold}#titulos a{text-decoration:none}#corpo{background-color:#fff;width:275px;height:290px;border:solid;border-width:1px;border-color:#f2f2f2;padding-top:10px;padding-bottom:10px;padding-left:5px;padding-right:5px}.riscovertical{border-left:dotted 1px #e5e5e5;width:1px;height:30px}</style> 
+
+    </head>
+
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-6845103-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script>
+
+</body>
+
+</html>
+
+<body>
+
+        <div id="corpo"> 
+
+        <table width="244" border="0" cellpadding="0" cellspacing="0" class="tabela" style="margin-left:10px;">
+            <tr>
+                <td colspan="3">
+
+                    <div id="atualizacao2" align="center"><a href="http://www.agron.com.br" target="_blank"><img src="https://www.agron.com.br/imagens/xagron_mini.png.pagespeed.ic.-KheXCLFlL.png" style="vertical-align:bottom; border:none"/></a><span class="ultimas-noticias"> <a href="http://www.agron.com.br/publicacoes.html?pesquisar=cotacoes" style="text-decoration:none; color:#333" target="_blank">| Cotações</a> </span>
+                    </div> 
+                    <div class="fonte">fonte: <a href="http://cepea.esalq.usp.br" target="_blank" class="linka" style="font-size:10px">cepea</a>
+                        data: <a href="http://www.agron.com.br/grafico-e-tabela-de-resumo-de-cotacao-agricola-e-pecuaria-para-commodities-como-graos-de-milho-e-soja-arroba-do-boi-e-da-vaca-preco-do-bezerro-do-acucar-algodao-arroz-e-cafe-segundo-o-cepea.html" target="_blank" class="linka" style="font-size:10px">17/11/2020</a>
+                        </span>
+
+
+                </td>
+            </tr>
+            <!--<tr>
+              <td colspan="3" align="left">
+                <div id="titulos" style="color:black; padding-bottom: 5px; font-size:9px;">Gráfico e tabela de resumo de cotação agrícola e pecuária para commodities como grãos de milho e soja arroba do boi e da vaca preço do bezerro do açúcar algodão arroz e café segundo o Cepea</div>
+              </td>
+            </tr>-->
+            <tr>
+                <td colspan="3" align="center"> </span></td>
+                <!--<td width="85" align="center"><div id="titulos">valor</span></td>-->
+            </tr>
+            <tr>
+                <td width="36">
+                    <img src="../widget/img/acucar.png" width="27" height="23"/>
+                </td>
+                <td width="112">
+                    <div id="indice">
+                        <span class="descricao"><a href="http://www.agron.com.br/cotacao-do-acucar-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank">Açúcar</a></span>
+                    </div>
+                </td>
+                <td width="96">
+                    <div id="cotacao">
+                        <a href="http://www.agron.com.br/cotacao-do-acucar-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank"><span class="moeda">R$</span><span class="valor">106.36</span><span class="unidade">/sc</span></a>
+                    </div></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../widget/img/algodao.png" width="27" height="23"/>
+                </td>
+                <td>
+                    <div id="indice">
+                        <span class="descricao"><a href="http://www.agron.com.br/cotacao-do-algodao-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank">Algodão</a></span>
+                    </div>
+                </td>
+                <td>    <div id="cotacao">
+                        <a href="http://www.agron.com.br/cotacao-do-algodao-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank"><span class="moeda">¢R$</span><span class="valor">382.66</span><span class="unidade">/lp</span></a>
+                    </div></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../widget/img/arroz.png" width="27" height="23"/>
+                </td>
+                <td>
+                    <div id="indice">
+                        <span class="descricao"><a href="http://www.agron.com.br/cotacao-do-arroz-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank">Arroz</a></span>
+                    </div>
+                </td>
+                <td>    <div id="cotacao">
+                        <a href="http://www.agron.com.br/cotacao-do-arroz-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank"><span class="moeda">R$</span><span class="valor">105.00</span><span class="unidade">/sc</span></a>
+                    </div></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://www.agron.com.br/widget/img/bezerro.png.pagespeed.ce.O6CQr_swjI.png" width="27" height="23"/>
+                </td>
+                <td>
+                    <div id="indice">
+                        <span class="descricao"><a href="http://www.agron.com.br/cotacao-do-bezerro-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank">Bezerro</a></span>
+                    </div>
+                </td>
+                <td>    <div id="cotacao">
+                        <a href="http://www.agron.com.br/cotacao-do-bezerro-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank"><span class="moeda">R$</span><span class="valor">2450.50</span><span class="unidade">/cab</span></a>
+                    </div></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../widget/img/boi.png" width="27" height="23"/>
+                </td>
+                <td>
+                    <div id="indice">
+                        <span class="descricao"><a href="http://www.agron.com.br/cotacao-do-boi-gordo-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank">Boi</a></span>
+                    </div>
+                </td>
+                <td>    <div id="cotacao">
+                        <a href="http://www.agron.com.br/cotacao-do-boi-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank"><span class="moeda">R$</span><span class="valor">285.45</span><span class="unidade">/@</span></a>
+                    </div></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../widget/img/cafe.png" width="27" height="23"/>
+                </td>
+                <td>
+                    <div id="indice">
+                        <span class="descricao"><a href="http://www.agron.com.br/cotacao-do-cafe-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank">Café</a></span>
+                    </div>
+                </td>
+                <td>    <div id="cotacao">
+                        <a href="http://www.agron.com.br/cotacao-do-cafe-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank"><span class="moeda">R$</span><span class="valor">568.44</span><span class="unidade">/sc</span></a>
+                    </div></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../widget/img/milho.png" width="27" height="23"/>
+
+                </td>
+                <td>
+                    <div id="indice">
+                        <span class="descricao"><a href="http://www.agron.com.br/cotacao-do-milho-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank">Milho</a></span>
+                    </div>
+                </td>
+                <td>    <div id="cotacao">
+                        <a href="http://www.agron.com.br/cotacao-do-milho-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank"><span class="moeda">R$</span><span class="valor">80.92</span><span class="unidade">/sc</span></a>
+                    </div></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../widget/img/soja.png" width="27" height="23"/>
+
+                </td>
+                <td>
+                    <div id="indice">
+                        <span class="descricao"><a href="http://www.agron.com.br/cotacao-do-soja-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank">Soja</a></span>
+                    </div>
+                </td>
+                <td>    <div id="cotacao">
+                        <a href="http://www.agron.com.br/cotacao-do-soja-commodities-na-principal-regiao-produtora-segundo-cepea.html" target="_blank"><span class="moeda">R$</span><span class="valor">164.18</span><span class="unidade">/sc</span></a>
+                    </div></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="incorporar2" style="margin-top:7px;">
+
+
+                        <img src="../imagens/mais.png"/><a class="linka" href="http://www.agron.com.br/grafico-e-tabela-de-resumo-de-cotacao-agricola-e-pecuaria-para-commodities-como-graos-de-milho-e-soja-arroba-do-boi-e-da-vaca-preco-do-bezerro-do-acucar-algodao-arroz-e-cafe-segundo-o-cepea.html" target="_blank"> veja mais cotações agropecuárias</a><br>
+                            <img src="https://www.agron.com.br/imagens/home.png.pagespeed.ce.eITbw0fafO.png"/><a class="linka" href="http://www.agron.com.br/widgets.html" target="_blank"> coloque no seu site</a> 
+
+                    </div></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
