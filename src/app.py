@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from dateutil.relativedelta import *
 from pandas_datareader import DataReader
 
@@ -30,6 +30,11 @@ accepted_codes = {
 crop_codes = {
     'corn': ['ZCZ20.CBT', 'ZCH21.CBT'],
     'soybeans': ['ZSK21.CBT', 'ZSU21.CBT']
+}
+
+current_price = {
+    "soy": "164,02",
+    "corn": "80,02"
 }
 
 corn_bu = 56 # 1 bushel of corn = 56 pounds
@@ -85,6 +90,31 @@ def read_futures_by_date(crop_code: str, start_date: date, end_date: date = date
 
         for index in request.index:
             response['price_history'][index.date()] = request.at[index, 'Adj Close']
+    
+        return response
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid date range.")
+    except KeyError:
+        raise HTTPException(status_code=404, detail="No data found in date range.")
+
+@app.get('/quote/crop/{crop_code}/last')
+def read_last_future_by_date(crop_code: str):
+
+    if crop_code not in accepted_codes:
+        raise HTTPException(status_code=404, detail="Crop code not found")
+
+    try:
+        request = DataReader(crop_code, 'yahoo', date.today() - timedelta(days=7))
+
+
+        response = {
+            "code": crop_code,
+            'description': accepted_codes[crop_code]['description'],
+            'contractDate': accepted_codes[crop_code]['contractDate'],
+            'currency': 'USD',
+            'price_date': request.index.max().date(),
+            'future_price': request.at[request.index.max(), 'Adj Close']
+        }
     
         return response
     except ValueError:
@@ -155,20 +185,28 @@ def get_file(id: str):
         raise HTTPException(status_code=404, detail="File not found")
 
 
-    #total_yield = get_total_yield_cfv(key, bucketName, bucketRegion, 'yieldVolume')
+    total_yield = get_total_yield_cfv(key, bucketName, bucketRegion, 'yieldVolume')
 
-    total_yield = 20000
+    #total_yield = 20000
     crop = f['summary']['properties']['crop'][0]
     endDate = f['operationEndTime'][0:10]
 
     estimation = dict()
+
     quotes = total_yield / 5000
     datedate = datetime.strptime(endDate, '%Y-%m-%d')
+
     for c in crop_codes[crop]:
+        
+        last_future = read_last_future_by_date(c)
+        last_future.pop('code', None)
+
         estimation[c] = {
-            'size': 5000,
-            'quotes': quotes,
-            'price': read_futures_by_date(c, datedate, datedate + relativedelta(weeks=+4))
+            'future_size': 5000,
+            'num_futures': round(quotes, 2),
+            'future_price': last_future['future_price'],
+            'estimated_sale_price': round(last_future['future_price'] * quotes, 2),
+            'future_details': last_future
         }
 
 
