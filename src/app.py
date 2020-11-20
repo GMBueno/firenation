@@ -4,6 +4,7 @@ from datetime import date
 from pandas_datareader import DataReader
 
 from utils.total_yield import get_total_yield_cfv
+from utils import files
 
 app = FastAPI()
 
@@ -25,6 +26,14 @@ accepted_codes = {
     "contractDate": "09/2021"
   }
 }
+
+crop_codes = {
+    'corn': ['ZCZ20.CBT', 'ZCH21.CBT'],
+    'soybeans': ['ZSK21.CBT', 'ZSU21.CBT']
+}
+
+corn_bu = 56 # 1 bushel of corn = 56 pounds
+soybeans_bu = 60 # 1 bushel of corn = 60 pounds
 
 @app.get("/")
 def read_root():
@@ -65,8 +74,7 @@ def read_futures_by_date(crop_code: str, start_date: date, end_date: date = date
 
     try:
         request = DataReader(crop_code, 'yahoo', start_date, end_date)
-            
-    
+
         response = {
             "code": crop_code,
             'description': accepted_codes[crop_code]['description'],
@@ -119,7 +127,49 @@ def read_price_date_range(crop_type: str, start_date: date, end_date: date):
 
 
 @app.get("/totalyield/")
-def read_total_yield(key: str, bucketName: str, bucketRegion: str, prop: str):
+def read_total_yield(key: str, bucketName: str, bucketRegion: str):
     return {
-        'total_yield' : get_total_yield_cfv(key, bucketName, bucketRegion, prop)
+        'total_yield' : get_total_yield_cfv(key, bucketName, bucketRegion, 'yieldVolume')
+        }
+
+@app.get("/{id}")
+def get_file(id: str):
+    if id == dtn_file['id']:
+        return dtn_file
+    elif id == sample_file['id']:
+        return sample_file
+
+@app.get("/{id}/estimation")
+def get_file(id: str):
+    if id == files.dtn_file['id']:
+        f = files.dtn_file
+        key = files.dtn_key
+        bucketName = files.dtn_bucket_name
+        bucketRegion = files.dtn_region
+    elif id == files.sample_file['id']:
+        f = files.sample_file
+        key = files.sample_key
+        bucketName = files.sample_bucket_name
+        bucketRegion = files.sample_region
+    else:
+        raise HTTPException(status_code=404, detail="File not found")
+
+
+    total_yield = get_total_yield_cfv(key, bucketName, bucketRegion, 'yieldVolume')
+    crop = f['summary']['properties']['crop'][0]
+    endDate = f['operationEndTime'][0:10]
+
+    estimation = dict()
+    for c in crop_codes[crop]:
+        estimation[c] = accepted_codes[c]
+    return {
+        "id": f['id'],
+        "total_production": {
+            'total_yield' : total_yield,
+            'unit': 'bu'
+        },
+        'crop': crop,
+        "harvestEnd": endDate,
+        "currency": "USD",
+        'estimation' : estimation
     }
