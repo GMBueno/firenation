@@ -160,8 +160,14 @@ def get_file(id: str):
     endDate = f['operationEndTime'][0:10]
 
     estimation = dict()
+    quotes = total_yield / 5000
     for c in crop_codes[crop]:
-        estimation[c] = accepted_codes[c]
+        estimation[c] = {
+            'size': 5000,
+            'quotes': quotes,
+            c: accepted_codes[c]
+        }
+
     return {
         "id": f['id'],
         "total_production": {
