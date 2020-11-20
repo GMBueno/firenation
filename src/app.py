@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from datetime import date
-
+from datetime import date, datetime
+from dateutil.relativedelta import *
 from pandas_datareader import DataReader
 
 from utils.total_yield import get_total_yield_cfv
@@ -110,7 +110,7 @@ def read_futures_date_range(crop_type: str, start_date: date, end_date: date):
 
 
 @app.get("/finance/{crop_type}/prices")
-def read_price_date_range(crop_type: str, price_date: date):
+def read_price_date(crop_type: str, price_date: date):
     return {
         "crop_type": crop_type, 
         "date": price_date.strftime("%x")
@@ -155,18 +155,22 @@ def get_file(id: str):
         raise HTTPException(status_code=404, detail="File not found")
 
 
-    total_yield = get_total_yield_cfv(key, bucketName, bucketRegion, 'yieldVolume')
+    #total_yield = get_total_yield_cfv(key, bucketName, bucketRegion, 'yieldVolume')
+
+    total_yield = 20000
     crop = f['summary']['properties']['crop'][0]
     endDate = f['operationEndTime'][0:10]
 
     estimation = dict()
     quotes = total_yield / 5000
+    datedate = datetime.strptime(endDate, '%Y-%m-%d')
     for c in crop_codes[crop]:
         estimation[c] = {
             'size': 5000,
             'quotes': quotes,
-            c: accepted_codes[c]
+            'price': read_futures_by_date(c, datedate, datedate + relativedelta(weeks=+4))
         }
+
 
     return {
         "id": f['id'],
@@ -176,6 +180,5 @@ def get_file(id: str):
         },
         'crop': crop,
         "harvestEnd": endDate,
-        "currency": "USD",
-        'estimation' : estimation
+        'estimation' : estimation,
     }
